@@ -28,7 +28,7 @@
 ?>
 <?php get_header(); ?>
 
-		<section class="container">
+		<section class="container PAGE-CASO">
 		<?php if ( have_posts() ): ?>
 			<?php while( have_posts() ): the_post(); ?>
 			<div>

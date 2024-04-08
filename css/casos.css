@@ -13,6 +13,52 @@
 	Domain Path: /languages/
 	========================================================================== */
 
+
+/*
+ Pantalla Preload
+ =============================================================================*/
+.preloader > div img {
+	display: block;
+	height: 100px;
+	margin: 60px auto;
+	width: 344px;
+  }
+  .preloader > div > h1 {
+	color: #ffffff;
+	font-weight: 500;
+	margin: 60px auto;
+	text-transform: uppercase;
+  }
+  .preloader > div > h1 small {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-transform: none;
+  }
+  .preloader > div > a.btn-large {
+	background-color: #ffffff;
+	color: var(--color-primary);
+	font-size: 1.5rem;
+	margin: 60px auto;
+	padding: 0 60px;
+  }
+  .preloader > div > a.btn-large:hover {
+	background-color: var(--color-accent);
+	color: #ffffff;
+  }
+  
+
+/* Estilos para el contenido */
+#content {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.5s ease; /* Transición de opacidad */
+}
+#content.show {
+	display: block;
+	opacity: 1;
+}
+
 	
 /*
 	Definición de estilos CSS para la plantilla de casos

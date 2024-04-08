@@ -15,7 +15,7 @@
 ?>
 <?php if( ! defined( 'ABSPATH' ) ) exit; ?>
 <?php
-add_theme_support( 'post-thumbnails', array( 'page' ) );
+	add_theme_support( 'post-thumbnails', array( 'page' ) );
 	add_action( 'wp_enqueue_scripts', 'maki_queue_casos', 900 );
 
 	function maki_queue_casos(){
@@ -28,7 +28,33 @@ add_theme_support( 'post-thumbnails', array( 'page' ) );
 ?>
 <?php get_header(); ?>
 
-		<section class="container">
+	
+	
+		<!-- Preloader -->
+		<section class="preloader">
+		<?php if ( have_posts() ): ?>
+			<?php while( have_posts() ): the_post(); ?>
+			<?php $casos_pages = get_pages( array( 'child_of' => get_the_ID(), 'parent' => get_the_ID() ) ); ?>
+			<div>
+				<img src="<?php echo get_template_directory_uri(); ?>/images/logos/logo-facultad-de-farmacia-blanco.svg" alt="Logo Facultad de Farmacia">
+				<h1>
+					Estudio de Casos
+					<small><?php the_title(); ?></small>
+				</h1>
+				
+			</div>
+			<?php endwhile; ?>
+		<?php else: ?>
+			<div>
+				<img src="<?php echo get_template_directory_uri(); ?>/images/logos/logo-facultad-de-farmacia-blanco.svg" alt="Logo Facultad de Farmacia">
+
+			</div>
+		<?php endif; ?>
+		</section>
+		<!-- Preloader -->
+
+
+		<section  class="container PAGE-CASOS">
 		<?php if ( have_posts() ): ?>
 			<?php while( have_posts() ): the_post(); ?>
 			<div>
@@ -92,4 +118,6 @@ add_theme_support( 'post-thumbnails', array( 'page' ) );
 		<?php endif; ?>
 		</section>
 
+
+		
 <?php get_footer(); ?>
