@@ -1,0 +1,60 @@
+@charset 'utf-8';
+/*
+  Theme Name:  Estudio de casos
+  Theme URI:   https://pmasquiaran.dev/
+  Author:      Pablo Masquiarán
+  Author URI:  https://pmasquiaran.dev/
+  License:     LGPLv3 (Licencia Pública General Reducida de GNU)
+  License URI: https://www.gnu.org/licenses/lgpl-3.0-standalone.html
+  Description: ...
+  Version:     1.0
+  Tags:        ...
+  Text Domain: maki
+  Domain Path: /languages/
+  ========================================================================== */
+
+
+/*
+  Definición de estilos CSS para la plantilla de asignatura
+  ========================================================================== */
+
+section > div img {
+  display: block;
+  height: 100px;
+  margin: 60px auto;
+  width: 344px;
+}
+section > div > h1 {
+  color: #ffffff;
+  font-weight: 500;
+  margin: 60px auto;
+  text-transform: uppercase;
+}
+section > div > h1 small {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: none;
+}
+section > div > a.btn-large {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin: 60px auto;
+  padding: 0 60px;
+}
+section > div > a.btn-large:hover {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+
+/*
+  Media queries para estilos CSS de la plantilla de asignatura
+  ========================================================================== */
+
+@media(max-width:600px) {}
+@media(min-width:601px) {}
+@media(min-width:993px) {}
+@media(min-width:1201px) {}
+

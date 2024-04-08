@@ -1,0 +1,91 @@
+@charset 'utf-8';
+/*
+	Theme Name:  Estudio de casos
+	Theme URI:   https://pmasquiaran.dev/
+	Author:      Pablo Masquiarán
+	Author URI:  https://pmasquiaran.dev/
+	License:     LGPLv3 (Licencia Pública General Reducida de GNU)
+	License URI: https://www.gnu.org/licenses/lgpl-3.0-standalone.html
+	Description: ...
+	Version:     1.0
+	Tags:        ...
+	Text Domain: maki
+	Domain Path: /languages/
+	========================================================================== */
+
+	
+/*
+	Definición de estilos CSS para la plantilla de casos
+	========================================================================== */
+
+nav {
+	background-color: transparent;
+	box-shadow: none !important;
+}
+nav .brand {
+	float: left;
+	height: 64px;
+	padding: 5px 15px;
+}
+nav .brand img {
+	height: 54px;
+	max-height: 54px;
+}
+section > div {
+	height: 604px;
+	max-height: 604px;
+}
+.carousel {
+ 	height: 540px;
+}
+.carousel .carousel-item {
+	border-radius: 1rem;
+	height: 480px;
+	margin: -30px 0 0 0;
+	overflow: hidden;
+	width: 480px;
+}
+.carousel .indicators .indicator-item {
+	height:16px;
+	width: 16px;
+}
+.card-content {
+	padding-bottom: 0 !important;
+}
+.card-content .card-title {
+	color: var(--color-primary);
+	text-transform: uppercase;
+}
+.card-content .card-title strong {
+	font-weight: 700 !important;
+}
+.card-content .card-title small {
+	display: block;
+	font-size: 1rem;
+	font-weight: 500 !important;
+	line-height: 1;
+}
+.card-content p {
+	margin-bottom: 15px !important;
+}
+.card-content p img {
+	min-height: 220px;
+	width: 100%;
+}
+.card-action {
+	border-top: 2px solid var(--color-primary) !important;
+}
+.card-action a {
+	color: var(--color-primary) !important;
+	font-weight: 700;
+}
+
+
+/*
+	Media queries para estilos CSS para la plantilla de casos
+	========================================================================== */
+
+@media(max-width:600px) {}
+@media(min-width:601px) {}
+@media(min-width:993px) {}
+@media(min-width:1201px) {}
