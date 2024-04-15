@@ -21,25 +21,54 @@
 	function maki_queue_asignatura(){
 
 		wp_enqueue_style( 'estudiodecasos-asignatura', get_template_directory_uri() . '/css/asignatura.css', array(), null, 'all' );
-		//wp_enqueue_script( 'estudiodecasos-asignatura', get_template_directory_uri() . '/js/asignatura.js', array(), '', true );
+		wp_enqueue_script( 'estudiodecasos-asignatura', get_template_directory_uri() . '/js/asignatura.js', array(), '', true );
 
 	};
 
 ?>
 <?php get_header(); ?>
 
-		<section class="container PAGE-ASIGNATURA">
+		<section class="container">
 		<?php if ( have_posts() ): ?>
 			<?php while( have_posts() ): the_post(); ?>
-			<?php $casos_pages = get_pages( array( 'child_of' => get_the_ID(), 'parent' => get_the_ID() ) ); ?>
-			<div>
+
+			<div class="preloader animate__animated animate__fadeIn animate__slow">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/logos/logo-facultad-de-farmacia-blanco.svg" alt="Logo Facultad de Farmacia">
 				<h1>
 					Estudio de Casos
 					<small><?php the_title(); ?></small>
 				</h1>
-				<a class="waves-effect waves-light btn-large" href="<?php echo get_permalink( $casos_pages[0]->ID ); ?>">Ingresar<i class="material-icons right">arrow_forward_ios</i></a>
+				<a class="ingresar waves-effect waves-light btn-large" href="#">Ingresar<i class="material-icons right">arrow_forward_ios</i></a>
 			</div>
+
+			<div class="casos ocultar animate__animated animate__slow animate__delay-2s">
+				<nav>
+					<a href="#" class="brand"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/logo-facultad-de-farmacia-blanco.svg" alt="Logo Facultad de Farmacia"></a>
+				</nav>
+				<div class="carousel">
+				<?php $casos_pages = get_pages( array( 'child_of' => get_the_ID(), 'parent' => get_the_ID(), 'sort_column' => 'menu_order' ) ); ?>
+				<?php foreach( $casos_pages as $caso ): ?>
+					<div class="carousel-item card z-depth-3">
+						<div class="card-content">
+							<span class="card-title">
+								<strong><?php echo get_the_title( $caso->ID ); ?></strong>
+								<small><?php echo get_field( 'nombre', $caso->ID ); ?></small>
+							</span>
+							<p><?php echo get_field( 'descripcion', $caso->ID ); ?></p>
+							<?php if ( has_post_thumbnail() ): ?>
+							<p><img src="<?php the_post_thumbnail_url(); ?>" alt=""></p>
+							<?php else: ?>
+							<p><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/related-caso-generica.jpg" alt=""></p>
+							<?php endif; ?>
+						</div>
+						<div class="card-action">
+							<a class="waves-effect waves-light btn-flat" href="<?php echo get_permalink( $caso->ID ); ?>">Ingresar<i class="material-icons right">arrow_forward_ios</i></a>
+						</div>
+					</div>
+				<?php endforeach; ?>
+				</div>
+			</div>
+
 			<?php endwhile; ?>
 		<?php else: ?>
 			<div>

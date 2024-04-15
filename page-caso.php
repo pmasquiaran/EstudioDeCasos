@@ -28,10 +28,10 @@
 ?>
 <?php get_header(); ?>
 
-		<section class="container PAGE-CASO">
+		<section class="container">
 		<?php if ( have_posts() ): ?>
 			<?php while( have_posts() ): the_post(); ?>
-			<div>
+			<div class="animate__animated animate__fadeInLeft animate__slow">
 				<nav>
 					<a href="#" class="brand"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/logo-facultad-de-farmacia-blanco.svg" alt="Logo Facultad de Farmacia"></a>
 					<ul class="right">
@@ -64,7 +64,9 @@
 								<span class="card-title">
 									<small>Exámenes</small>
 								</span>
-								<p><?php the_content(); ?></p>
+								<div class="columnas">
+									<?php the_content(); ?>
+								</div>
 							</div>
 						</div>
 					</div>

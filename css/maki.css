@@ -48,6 +48,7 @@ section {
 	flex-wrap: wrap;
 	height: 100vh;
 	justify-content: center;
+	overflow: hidden;
 }
 section > div {
 	overflow: hidden;
