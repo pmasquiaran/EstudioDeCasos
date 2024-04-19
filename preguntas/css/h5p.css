@@ -20,9 +20,9 @@
 	========================================================================== */
 
 	.h5p-iframe > body {
-		align-items: center;
+		/*align-items: center;
 		display: flex;
-		justify-content: center;
+		justify-content: center;*/
 	}
 	.h5p-iframe > body * {
 		font-family: 'Montserrat', sans-serif !important;
@@ -31,4 +31,33 @@
 	.h5p-interactive-video .h5p-slider,
 	.h5p-interactive-video .h5p-controls-right {
 		visibility: hidden !important;
+	}
+
+	
+/*
+	Formateo contenedor general de pregunta H5P
+	===========================================================================	*/
+	.h5p-content {
+		/*position: relative;
+		background: #fefefe;
+		border-bottom: none;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;*/
+		border: none;
+	}
+	.h5p-content ul.h5p-actions {
+		/*box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		overflow: hidden;
+		list-style: none;
+		padding: 0px 10px;
+		margin: 0;
+		height: 25px;
+		font-size: 12px;
+		background: #FAFAFA;
+		border-top: 1px solid #EEE;
+		border-bottom: 1px solid #EEE;
+		clear: both;
+		font-family: Sans-Serif;*/
+		display: none !important;
 	}
