@@ -19,9 +19,12 @@
 	========================================================================== */
 
 section iframe {
-	aspect-ratio: 16/9;
-	height: auto !important;
-	max-width: 960px !important;
+	/*aspect-ratio: 16/9;*/
+	height: 100% !important;
+	min-height: 492px !important;
+	max-height: 492px !important;
+	min-width: 570px !important;
+	max-width: 570px !important;
 	width: 100% !important;
 }
 
@@ -43,8 +46,16 @@ nav .brand img {
 	height: 54px;
 	max-height: 54px;
 }
+nav ul a.btn-floating,
+nav ul a.btn {
+	background-color: #ffffff;
+	color: var(--color-primary);
+}
 nav .btn {
-	margin-right: 0 !important;
+	margin-left: 0 !important;
+}
+nav ul a.btn-floating i {
+	color: var(--color-primary);
 }
 nav .sidenav-trigger {
 	display: inline-block !important;
@@ -55,11 +66,86 @@ nav .sidenav-trigger i {
 	height: 36px !important;
 	line-height: 36px !important;
 }
-section > div {
-	background-color: #ffffff;
-	border-radius: 1rem;
+section {
+	overflow: visible;
+}
+section > div.sidenav {
+	background-color: transparent;
+	box-shadow: none;
+	padding-left: 30px;
+	text-align: inherit;
+	width: 460px;
+}
+section > div.sidenav > div {
+	align-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	height: 100vh;
+	justify-content: center;
+}
+section > div:not(.sidenav) {
 	height: 604px;
 	max-height: 604px;
+	overflow: visible;
+	text-align: inherit;
+}
+.row {
+	margin-bottom: 0;
+}
+.col.s4 {
+	padding-left: 0;
+}
+.col.s8 {
+	padding-right: 0;
+}
+.card {
+	border-radius: 1rem;
+	height: 540px;
+	margin: 0;
+	overflow: hidden;
+	padding-bottom: 24px;
+	padding-top: 24px;
+}
+.card-content {
+	height: 492px;
+	max-height: 492px;
+	padding-bottom: 0 !important;
+	padding-top: 0 !important;
+	/*overflow: auto;*/
+}
+.card-content .texto-vertical {
+	color: var(--color-accent);
+	font-size: 24px;
+	font-weight: 700;
+	height: 100%;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	text-transform: uppercase;
+	top: 0;
+	writing-mode: vertical-lr;
+}
+.card-content .card-title {
+	color: var(--color-primary);
+	text-transform: uppercase;
+}
+.card-content .card-title strong {
+	font-weight: 700 !important;
+}
+.card-content .card-title small {
+	display: block;
+	font-size: 1rem;
+	font-weight: 500 !important;
+	line-height: 1;
+}
+.card-content p {
+	margin-bottom: 15px !important;
+}
+.card-content p img {
+	width: 100%;
 }
 .pagination li {
 	background-color: #ffffff;

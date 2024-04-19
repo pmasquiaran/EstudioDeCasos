@@ -82,8 +82,25 @@ section > div > iframe {
 .btn:hover,
 .btn-large:hover,
 .btn-small:hover,
-.btn-floating:hover {
+.btn-floating:hover,
+.btn:focus,
+.btn-large:focus,
+.btn-small:focus,
+.btn-floating:focus {
 	background-color: var(--color-accent);
+}
+.dropdown-content li {
+	min-height: 40px !important;
+}
+.dropdown-content li > a,
+.dropdown-content li > span {
+	color: var(--color-primary);
+	font-size: 12px !important;
+	font-weight: 700;
+	padding: 10px 15px !important;
+}
+.dropdown-content li > a > i {
+	margin: 0 10px 0 0 !important;
 }
 .container {
 	max-width: 960px;

@@ -72,48 +72,91 @@
 ?>
 <?php get_header(); ?>
 
-		<section class="container">
-		<?php if ( have_posts() ): ?>
-			<?php while( have_posts() ): the_post(); ?>
-
-			<div class="z-depth-3">
-				<nav>
-
-						<a href="#" class="brand"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/logo-facultad-de-farmacia-azul.svg" alt="Logo Facultad de Farmacia"></a>
-						<ul class="right">
-							<li>
-								<a class="waves-effect waves-light btn dropdown-trigger" href="#!" data-target="dropdown2"><i class="material-icons left">snippet_folder</i>Documentos</a>
-<ul id="dropdown2" class="dropdown-content">
-	<li><a href="#!">Documento one<span class="badge">1</span></a></li>
-	<li><a href="#!">Documento two<span class="new badge">1</span></a></li>
-	<li><a href="#!">Documento three</a></li>
-</ul>
-							</li>
-							<li>
-								<a class="waves-effect waves-light btn sidenav-trigger" data-target="slide-out"><i class="material-icons left">assignment</i>Fichas Clínicas</a>
-<ul id="slide-out" class="sidenav">
-	<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-	<li><a href="#!">Second Link</a></li>
-	<li><div class="divider"></div></li>
-	<li><a class="subheader">Subheader</a></li>
-	<li><a class="waves-effect waves-light" href="#!">Third Link With Waves</a></li>
-</ul>
-							</li>
-							<li><a class="waves-effect waves-light btn-floating"><i class="material-icons">home_filled</i></a></li>
-						</ul>
-
-				</nav>
-				<?php get_template_part( 'preguntas/page-pregunta-' . get_field( 'tipo' ) ); ?>
+<section class="container">
+	<?php if ( have_posts() ): ?>
+		<?php while( have_posts() ): the_post(); ?>
+		<?php $caso_post = get_post( wp_get_post_parent_id() ); ?>
+		<?php $caso_fields = get_fields( wp_get_post_parent_id() ); ?>
+			<div id="ficha" class="sidenav">
+				<div>
+					<div class="card z-depth-3">
+						<div class="card-content">
+							<span class="card-title">
+								<small>Exámenes</small>
+							</span>
+							<div>
+								<?php echo $ficha = apply_filters( 'the_content', $caso_post->post_content ); ?>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
+			<div class="animate__animated animate__fadeInLeft animate__slow">
+				<nav>
+					<a href="#" class="brand"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/logo-facultad-de-farmacia-blanco.svg" alt="Logo Facultad de Farmacia"></a>
+					<ul class="right">
+						<li>
+							<a class="waves-effect waves-light btn-floating" href="<?php echo get_permalink( wp_get_post_parent_id() ); ?>"><i class="material-icons">home_filled</i></a>
+						</li>
+						<li>
+							<a class="waves-effect waves-light btn sidenav-trigger" data-target="ficha"><i class="material-icons left">assignment</i>Ficha Clínica</a>
+						</li>
+						<li>
+							<a class="waves-effect waves-light btn dropdown-trigger" data-target="documentos"><i class="material-icons left">snippet_folder</i>Documentos</a>
+							<ul id="documentos" class="dropdown-content">
+								<?php foreach( $caso_fields['documentos'] as $indice => $documento ): ?>
+								<li>
+									<a href="<?php echo $documento['url-documento']; ?>" target="_blank">
+										<?php
 
+											switch( $documento['tipo-documento'] ):
+												case 'PDF': echo '<i class="material-icons left">picture_as_pdf</i>'; break;
+												case 'EXCEL': echo '<i class="material-icons left">table_view</i>'; break;
+												case 'WORD': echo '<i class="material-icons left">text_snippet</i>'; break;
+												case 'POWER POINT': echo '<i class="material-icons left">perm_media</i>'; break;
+											endswitch;
+
+										?>
+										<?php echo $documento['nombre-documento']; ?>
+									</a>
+								</li>
+								<?php endforeach; ?>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="row">
+					<div class="col s4">
+						<div class="card z-depth-3">
+							<div class="card-content">
+								<span class="card-title">
+									<strong><?php echo get_the_title( wp_get_post_parent_id() ); ?></strong>
+									<small><?php echo get_field( 'nombre', wp_get_post_parent_id() ); ?></small>
+								</span>
+								<?php if ( has_post_thumbnail( wp_get_post_parent_id() ) ): ?>
+								<p><img src="<?php the_post_thumbnail_url( wp_get_post_parent_id() ); ?>" alt=""></p>
+								<?php else: ?>
+								<p><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/related-caso-generica.jpg" alt=""></p>
+								<?php endif; ?>
+								<p><?php echo the_content(); ?></p>
+							</div>
+						</div>
+					</div>
+					<div class="col s8">
+						<div class="card z-depth-3">
+							<div class="card-content">
+								<h1 class="texto-vertical"><?php echo get_the_title(); ?></h1>
+								<?php get_template_part( 'preguntas/page-pregunta-' . get_field( 'tipo' ) ); ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<ul class="pagination">
-				<li class="waves-effect waves-light active z-depth-3"><a href="#!">1</a></li>
-				<li class="waves-effect waves-light z-depth-3"><a href="#!">2</a></li>
-				<li class="waves-effect waves-light z-depth-3"><a href="#!">3</a></li>
-				<li class="waves-effect waves-light z-depth-3"><a href="#!">4</a></li>
-				<li class="waves-effect waves-light z-depth-3"><a href="#!">5</a></li>
-				<li class="waves-effect waves-light z-depth-3"><a href="#!">6</a></li>
-				<li class="waves-effect waves-light z-depth-3"><a href="#!">7</a></li>
+				<?php $preguntas_pages = get_pages( array( 'child_of' => wp_get_post_parent_id(), 'parent' => wp_get_post_parent_id(), 'sort_column' => 'menu_order' ) ); ?>
+				<?php foreach( $preguntas_pages as $pregunta ): ?>
+				<li class="waves-effect waves-light z-depth-3<?php echo $active = ( $pregunta->ID == get_the_ID() ) ? ' active' : ''; ?>"><a href="<?php echo get_permalink( $pregunta->ID ); ?>"><?php echo ++$cont; ?></a></li>
+				<?php endforeach; ?>
 			</ul>
 
 			<?php endwhile; ?>
