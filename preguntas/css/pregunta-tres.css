@@ -18,4 +18,67 @@
 /*
 	Sobreescritura de estilos CSS de H5P
 	========================================================================== */
+	.h5p-drag-droppable-words{
+		margin-right: 0 !important;
+		float: right;
+		width: 60%;
+	}
+	.h5p-drag-text .h5p-drag-wide-screen {
+		float: left;
+		padding-top: 0;
+		width: 35%;
+    	padding-right: 5%;
+	}
+	.h5p-drag-text .h5p-drag-dropzone-container {
+		padding-right: 0.2em;
+	}
 
+	.h5p-drag-dropzone-container + span{
+		color: #000;
+		font-weight: 500;
+		background: #f7f7f7;
+		padding: 6px 10px;
+		font-size: 13px;
+		border-radius: 0.25em;
+	}
+
+	.h5p-drag-dropzone-container + span::before{
+		content: "";
+	}
+	.h5p-drag-dropzone-container + span::before{
+		content: "";
+	}
+
+	.h5p-drag-text [aria-grabbed] {
+		line-height: 1.25;
+		cursor: pointer;
+		border-radius: 0.25em;
+		padding: 0.2em 0.6em;
+		margin: 0.3em;
+		vertical-align: top;
+		text-align: center;
+		display: inline-block;
+		border: 0.1em solid #0c94e3;
+		font-size: 14px;
+		overflow: hidden;
+		background: #fff; 
+		box-shadow: none;
+		z-index: 3;
+		padding: 0.3em 1.65em 0.3em 0.3em;
+    	margin-bottom: 5px;
+	}
+
+
+	.h5p-drag-text [aria-dropeffect] {
+		position: relative;
+		top: 0.1em;
+		width: 10em;
+		height: 1.25em;
+		background-color: #f7f7f7;
+		border-radius: 0.25em;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		padding: 0.3em 1.65em 0.3em 0.3em;
+		margin-bottom: 5px;
+	}

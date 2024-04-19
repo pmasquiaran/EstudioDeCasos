@@ -22,6 +22,7 @@
 	.contenidor-interaccion{
 		width: 80%;
 		float: right;
+		padding: 5px;
 	}
 	.h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph {
 		/*background-color: #eee;
@@ -39,11 +40,12 @@
 		-webkit-touch-callout: none;
 		-webkit-user-select: none;
 		word-break: break-word;*/
+		background-color: #f7f7f7;
 		box-shadow: none;
 		font-size: 13px;
 		line-height: 1.5;
 		padding: 0;
-		height: 70px;
+		height: 66px;
 	}
 
 	.h5p-sort-paragraphs .h5p-sort-paragraphs-separator {
@@ -98,15 +100,38 @@
 	}
 
 	.h5p-question-content{
-		float: left;
+		/*float: left;
 		width: 100%;
 		height: 600px;
 		background: url('../images/recurso_1.png') top left no-repeat;
-  		background-size: cover; /* Resize the background image to cover the entire container */
+  		background-size: cover;
+		 Resize the background image to cover the entire container */
 	}
 	.h5p-sort-paragraphs-content{
-		width: 500px;
+		/*width: 500px;
 		float: right;
-		background-color: #544;
+		background-color: #544;*/
+	}
+
+	.h5p-question-content{
+		width: 97%;
+		height: 390px;
+		float: left;
+		overflow: hidden;
+		overflow-y: scroll;
+		background: url(../../images/recurso_1.png) top left no-repeat;
+		background-size: contain;
+	}
+
+	.h5p-sort-paragraphs-content 
+	/*.h5p-sort-paragraphs-view-state-results 
+	.h5p-sort-paragraphs-view-state-solutions*/{
+		width: 800px;
+    	float: right;
+		padding: 5px;
+	}
+
+	.h5p-question-buttons.h5p-question-visible {
+		text-align: right;
 	}
 
