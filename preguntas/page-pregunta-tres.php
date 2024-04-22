@@ -53,5 +53,4 @@
 
 		<!-- Iframe H5P :
 		================================================================================ -->
-		<?php echo do_shortcode( '[h5p id="' . get_field( 'id' ) . '"]' ); ?>
-
+		<?php echo do_shortcode( '[h5p id="'. get_field('id') .'"]' ); ?>
