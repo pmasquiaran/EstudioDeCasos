@@ -18,4 +18,120 @@
 /*
 	Sobreescritura de estilos CSS de H5P
 	========================================================================== */
+/* Ordenar*/
+	.contenidor-interaccion{
+		width: 80%;
+		float: right;
+		padding: 5px;
+	}
+	.h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph {
+		/*background-color: #eee;
+		border-color: rgba(0, 0, 0, 0);
+		border-radius: .3em;
+		border-style: solid;
+		border-width: .25em;
+		cursor: move;
+		display: flex;
+		flex-direction: row;
+		user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		word-break: break-word;*/
+		background-color: #f7f7f7;
+		box-shadow: none;
+		font-size: 13px;
+		line-height: 1.5;
+		padding: 0;
+		height: 66px;
+	}
+
+	.h5p-sort-paragraphs .h5p-sort-paragraphs-separator {
+		/*border-radius: .3em;
+		text-align: center;
+		width: calc(100% - .5em);
+		margin-left: auto;
+		margin-right: auto;*/
+		height: .1em;
+		margin: .2em 0;
+	}
+
+	.h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph-button-container {
+		/* display: flex;
+		flex-shrink: 0;
+		justify-content: center;
+		width: 3.25em; */
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph .h5p-sort-paragraphs-buttons-container {
+		display: none !important;
+	}
+
+
+	.h5p-sort-paragraphs .h5p-sort-paragraphs-button {
+		/*align-items: center;
+		background-color: #fff;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 1.15em 1.15em;
+		border: 2px solid rgba(0, 0, 0, 0);
+		border-radius: .3em;
+		color: #1a73d9;
+		cursor: pointer;
+		display: flex;
+		flex-shrink: 0;
+		height: 2.75em;
+		justify-content: center;
+		padding: 0;
+		width: 2.75em;*/
+
+		box-shadow: none;
+		min-height: 30px;
+		min-width: 30px;
+	}
+
+	.img-linea-tiempo{
+		height: 360px !important;
+    	float: right !important;
+	}
+
+	.h5p-question-content{
+		/*float: left;
+		width: 100%;
+		height: 600px;
+		background: url('../images/recurso_1.png') top left no-repeat;
+  		background-size: cover;
+		 Resize the background image to cover the entire container */
+	}
+	.h5p-sort-paragraphs-content{
+		/*width: 500px;
+		float: right;
+		background-color: #544;*/
+	}
+
+	.h5p-question-content{
+		width: 97%;
+		height: 390px;
+		float: left;
+		overflow: hidden;
+		overflow-y: scroll;
+		background: url(../../images/recurso_1.png) top left no-repeat;
+		background-size: contain;
+	}
+
+	.h5p-sort-paragraphs-content 
+	/*.h5p-sort-paragraphs-view-state-results 
+	.h5p-sort-paragraphs-view-state-solutions*/{
+		width: 800px;
+    	float: right;
+		padding: 5px;
+	}
+
+	.h5p-question-buttons.h5p-question-visible {
+		text-align: right;
+	}
 
