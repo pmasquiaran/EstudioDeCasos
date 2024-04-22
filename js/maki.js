@@ -1,6 +1,8 @@
 ( function () {
 
 	$('.sidenav').sidenav();
-	$('.dropdown-trigger').dropdown();
+	$('.dropdown-trigger').dropdown({
+		'constrainWidth': false
+	});
 
 } )();

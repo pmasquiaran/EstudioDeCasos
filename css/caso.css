@@ -36,6 +36,9 @@ nav ul a.btn {
 	background-color: #ffffff;
 	color: var(--color-primary);
 }
+nav .btn {
+	margin-left: 0 !important;
+}
 nav ul a.btn-floating i {
 	color: var(--color-primary);
 }
