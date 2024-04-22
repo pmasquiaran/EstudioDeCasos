@@ -53,20 +53,10 @@
 
 		<!-- Iframe H5P :
 		================================================================================ -->
-		<?php the_content(); ?>
-		<!-- <h1 id="titulo-caso" class=""><?php echo get_the_title( $post->post_parent ); ?></h1> -->
+		
 
 		<?php echo do_shortcode( '[h5p id="'. get_field('id') .'"]' ); ?>
-		<!-- <div class="row">
-			<div class="col s3">
-				<img style="margin-top:80px;height: 360px !important; float: right !important;" class="img-linea-tiempo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/recurso_1.png" alt="">
-			</div>
-			<div class="col s9">
-				<div class="contenidor-interaccion">
-					<?php echo do_shortcode( '[h5p id="'. get_field('id') .'"]' ); ?>
-				</div>
-			</div>
-		</div> -->
+		
 		
 		
 		

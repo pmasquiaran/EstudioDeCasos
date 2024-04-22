@@ -6,7 +6,7 @@
 	Author URI:  https://pmasquiaran.dev/
 	License:     LGPLv3 (Licencia Pública General Reducida de GNU)
 	License URI: https://www.gnu.org/licenses/lgpl-3.0-standalone.html
-	Description: ...
+	Description: Drag the Words, Tabulador arrastrar palabras
 	Version:     1.0
 	Tags:        ...
 	Text Domain: maki
@@ -18,16 +18,25 @@
 /*
 	Sobreescritura de estilos CSS de H5P
 	========================================================================== */
+
+	.h5p-question-introduction{
+		margin: 0 0 20px 0;
+	}
+	.h5p-question-content{
+		margin: 0;
+	}
 	.h5p-drag-droppable-words{
 		margin-right: 0 !important;
 		float: right;
-		width: 60%;
+		width: 100%;
 	}
 	.h5p-drag-text .h5p-drag-wide-screen {
 		float: left;
 		padding-top: 0;
-		width: 35%;
-    	padding-right: 5%;
+		width: 100%;
+	}
+	.h5p-drag-text .h5p-drag-draggables-container{
+		width: 100%;
 	}
 	.h5p-drag-text .h5p-drag-dropzone-container {
 		padding-right: 0.2em;
@@ -59,7 +68,7 @@
 		text-align: center;
 		display: inline-block;
 		border: 0.1em solid #0c94e3;
-		font-size: 14px;
+		font-size: 13px;
 		overflow: hidden;
 		background: #fff; 
 		box-shadow: none;
@@ -72,7 +81,7 @@
 	.h5p-drag-text [aria-dropeffect] {
 		position: relative;
 		top: 0.1em;
-		width: 10em;
+		width: 11em !important;
 		height: 1.25em;
 		background-color: #f7f7f7;
 		border-radius: 0.25em;
@@ -81,4 +90,14 @@
 		text-align: center;
 		padding: 0.3em 1.65em 0.3em 0.3em;
 		margin-bottom: 5px;
+	}
+
+	.h5p-question-buttons.h5p-question-visible {
+		margin: 1.5em 0 0 0;
+	}
+
+	/* Retroalimentación */
+	.h5p-drag-text .h5p-drag-show-solution-container.incorrect {
+		font-size: 11px;
+		font-weight: 600;
 	}

@@ -18,6 +18,13 @@
 /*
 	Sobreescritura de estilos CSS de H5P
 	========================================================================== */
+
+	.h5p-question-introduction{
+		display: none;
+		margin: 0 0 20px 0;
+	}
+
+
 /* Ordenar*/
 	.contenidor-interaccion{
 		width: 80%;
@@ -42,10 +49,10 @@
 		word-break: break-word;*/
 		background-color: #f7f7f7;
 		box-shadow: none;
-		font-size: 13px;
+		font-size: 12px;
 		line-height: 1.5;
 		padding: 0;
-		height: 66px;
+		height: 75px;
 	}
 
 	.h5p-sort-paragraphs .h5p-sort-paragraphs-separator {
@@ -113,25 +120,58 @@
 		background-color: #544;*/
 	}
 
-	.h5p-question-content{
-		width: 97%;
-		height: 390px;
+	.h5p-question-image{
+		width: 15%;
 		float: left;
-		overflow: hidden;
+		margin-top: 35px;
+	}
+
+	.h5p-question-content{
+		/*width: 97%;
+		height: 390px;*/
+
+		width: 85%;
+		margin: 0;
+		float: left;
+		/*overflow: hidden;
 		overflow-y: scroll;
 		background: url(../../images/recurso_1.png) top left no-repeat;
-		background-size: contain;
+		background-size: contain;*/
+	}
+
+	.h5p-question-image img {
+		width: 85px;
 	}
 
 	.h5p-sort-paragraphs-content 
 	/*.h5p-sort-paragraphs-view-state-results 
 	.h5p-sort-paragraphs-view-state-solutions*/{
-		width: 800px;
+		/*width: 800px;*/
     	float: right;
 		padding: 5px;
 	}
 
 	.h5p-question-buttons.h5p-question-visible {
 		text-align: right;
+	}
+
+
+	/* Selected */
+	.h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph.h5p-sort-paragraphs-selected{
+		background:#ebefff;
+		border-color:#0c94e3;
+		box-shadow:none; 
+		color: #000;
+	}
+
+
+	/* Orden correcto */
+	.h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph.h5p-sort-paragraphs-disabled:not(.animate-translation):not(.h5p-sort-paragraphs-wrong):not(.h5p-sort-paragraphs-correct) {
+		background-color: #f1f7f2;
+		border-color: #ccc;
+		color: #000000;
+	}
+	.h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph {
+		border-width: 1px;
 	}
 
