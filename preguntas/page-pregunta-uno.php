@@ -53,6 +53,4 @@
 
 		<!-- Iframe H5P :
 		================================================================================ -->
-		<?php // the_content(); ?>
-		<h1 id="titulo-caso" class=""><?php echo get_the_title( $post->post_parent ); ?></h1>
 		<?php echo do_shortcode( '[h5p id="'. get_field('id') .'"]' ); ?>
