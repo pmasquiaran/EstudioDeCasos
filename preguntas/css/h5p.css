@@ -22,7 +22,7 @@
 	align-items: center;
 	display: flex;
 }
-.h5p-iframe > body * {
+.h5p-iframe > body {
 	font-family: 'Montserrat', sans-serif !important;
 }
 
@@ -42,5 +42,9 @@
 }
 .h5p-content ul.h5p-actions {
 	display: none !important;
+}
+
+.h5p-question-buttons.h5p-question-visible{
+	text-align: right;
 }
 

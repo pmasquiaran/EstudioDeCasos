@@ -26,11 +26,16 @@
     }
 
     // Output score object to console
-    console.log(xAPI.result.score);
+    console.log('Score', xAPI.result.score);
 
   };
 
   // Listen to xAPI statements
-  H5P.externalDispatcher.on('xAPI', xAPIHandler);
+  //H5P.externalDispatcher.on('xAPI', xAPIHandler);
+
+  H5P.externalDispatcher.on('domChanged', function (event) {
+	  console.log(event.data.$target, 'Copyright (c) H5P');
+ });
+
 
 }());

@@ -46,6 +46,11 @@
 			//'version' => $cache_buster // Cache buster
 		);
 
+		$scripts[] = (object) array(
+			'path' => get_template_directory_uri() . '/preguntas/js/pregunta-' . get_field('tipo') . '.js',
+			//'version' => $cache_buster // Cache buster
+		);
+
 	}
 
 	/**
@@ -64,6 +69,11 @@
 
 		$styles[] = (object) array(
 			'path' => get_template_directory_uri() . '/preguntas/css/h5p.css',
+			//'version' => $cache_buster // Cache buster
+		);
+
+		$styles[] = (object) array(
+			'path' => get_template_directory_uri() . '/preguntas/css/pregunta-' . get_field('tipo') . '.css',
 			//'version' => $cache_buster // Cache buster
 		);
 
@@ -106,7 +116,7 @@
 							<ul id="documentos" class="dropdown-content">
 								<?php foreach( $caso_fields['documentos'] as $indice => $documento ): ?>
 								<li>
-									<a href="<?php echo $documento['url-documento']; ?>" target="_blank">
+									<a href="<?php echo $documento['url-documento']['url']; ?>" target="_blank">
 										<?php
 
 											switch( $documento['tipo-documento'] ):
@@ -146,7 +156,9 @@
 						<div class="card z-depth-3">
 							<div class="card-content">
 								<h1 class="texto-vertical"><?php echo get_the_title(); ?></h1>
-								<?php get_template_part( 'preguntas/page-pregunta-' . get_field( 'tipo' ) ); ?>
+								<!-- Iframe H5P :
+								================================================================================ -->
+								<?php echo do_shortcode( '[h5p id="'. get_field('id') .'"]' ); ?>
 							</div>
 						</div>
 					</div>
