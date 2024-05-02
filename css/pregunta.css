@@ -33,16 +33,6 @@ section iframe {
 /*
 	Definición de estilos CSS para la plantilla de pregunta
 	========================================================================== */
-#titulo-caso{
-	font-size: 18px;
-    line-height: 110%;
-    margin: 2.8rem 0 1.68rem 0;
-    text-transform: uppercase;
-    text-align: left;
-    margin-left: 20px;
-    font-weight: 500;
-    color: var(--color-primary);
-}
 
 nav {
 	background-color: transparent;
@@ -61,9 +51,7 @@ nav ul a.btn-floating,
 nav ul a.btn {
 	background-color: #ffffff;
 	color: var(--color-primary);
-}
-nav .btn {
-	margin-left: 0 !important;
+	margin: 0 8px 0 0 !important;
 }
 nav ul a.btn-floating i {
 	color: var(--color-primary);
@@ -87,6 +75,12 @@ section > div.sidenav {
 	text-align: inherit;
 	width: 460px;
 }
+section > div:not(.sidenav) {
+	height: 604px;
+	max-height: 604px;
+	overflow: visible;
+	text-align: inherit;
+}
 section > div.sidenav > div {
 	align-content: center;
 	display: flex;
@@ -94,11 +88,27 @@ section > div.sidenav > div {
 	height: 100vh;
 	justify-content: center;
 }
-section > div:not(.sidenav) {
-	height: 604px;
-	max-height: 604px;
-	overflow: visible;
-	text-align: inherit;
+section > div.sidenav > div .card {
+	overflow: visible !important;
+}
+section > div.sidenav > div .card::before {
+	background: url('../images/clip.png') center top no-repeat;
+	background-size: contain;
+	content: '';
+	display: block;
+	height: 60px;
+	left: 50%;
+	margin-left: -110px;
+	position: absolute;
+	top: -30px;
+	width: 220px;
+	z-index: 9;
+}
+section > div.sidenav > div .card .card-content {
+	overflow: auto !important;
+}
+section > div.sidenav > div .card .card-content .card-title {
+	margin-top: 16px;
 }
 .row {
 	margin-bottom: 0;
@@ -122,7 +132,6 @@ section > div:not(.sidenav) {
 	max-height: 492px;
 	padding-bottom: 0 !important;
 	padding-top: 0 !important;
-	/*overflow: auto;*/
 }
 .card-content .texto-vertical {
 	color: var(--color-accent);

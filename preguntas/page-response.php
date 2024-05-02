@@ -12,45 +12,8 @@
  * ================================================================================
  */
 ?>
-<?php if( ! defined( 'ABSPATH' ) ) exit; ?>
 <?php
 
-	//global $cache_buster = '?ver=' . H5P_Plugin::VERSION;
+header('Content-type: application/json; charset=utf-8');
 
-	/**
-	 * @function maki_alter_h5p_scripts()
-	 * @description función para sobreescribir el diseño por defecto de H5P
-	 * ================================================================================
-	 */
-	add_action( 'h5p_alter_library_scripts', 'maki_alter_h5p_scripts', 10, 3 );
-
-	function maki_alter_h5p_scripts( &$scripts, $libraries, $embed_type ){
-
-		$scripts[] = (object) array(
-			'path' => get_template_directory_uri() . '/preguntas/js/pregunta-' . get_field('tipo') . '.js',
-			//'version' => $cache_buster // Cache buster
-		);
-
-	}
-
-	/**
-	 * @function maki_alter_h5p_styles()
-	 * @description función para sobreescribir el diseño por defecto de H5P
-	 * ================================================================================
-	 */
-	add_action( 'h5p_alter_library_styles', 'maki_alter_h5p_styles', 10, 3 );
-
-	function maki_alter_h5p_styles( &$styles, $libraries, $embed_type ){
-
-		$styles[] = (object) array(
-			'path' => get_template_directory_uri() . '/preguntas/css/pregunta-' . get_field('tipo') . '.css',
-			//'version' => $cache_buster // Cache buster
-		);
-
-	}
-
-?>
-
-		<!-- Iframe H5P :
-		================================================================================ -->
-		<?php echo do_shortcode( '[h5p id="'. get_field('id') .'"]' ); ?>
+echo json_encode($_POST, JSON_FORCE_OBJECT);

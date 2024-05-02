@@ -47,7 +47,7 @@
 		);
 
 		$scripts[] = (object) array(
-			'path' => get_template_directory_uri() . '/preguntas/js/pregunta-' . get_field('tipo') . '.js',
+			'path' => get_template_directory_uri() . '/preguntas/js/pregunta-' . get_field( 'tipo' ) . '.js',
 			//'version' => $cache_buster // Cache buster
 		);
 
@@ -73,7 +73,7 @@
 		);
 
 		$styles[] = (object) array(
-			'path' => get_template_directory_uri() . '/preguntas/css/pregunta-' . get_field('tipo') . '.css',
+			'path' => get_template_directory_uri() . '/preguntas/css/pregunta-' . get_field( 'tipo' ) . '.css',
 			//'version' => $cache_buster // Cache buster
 		);
 
@@ -109,7 +109,7 @@
 							<a class="waves-effect waves-light btn-floating" href="<?php echo get_permalink( wp_get_post_parent_id() ); ?>"><i class="material-icons">home_filled</i></a>
 						</li>
 						<li>
-							<a class="waves-effect waves-light btn sidenav-trigger" data-target="ficha"><i class="material-icons left">assignment</i>Ficha Clínica</a>
+							<a class="waves-effect waves-light btn sidenav-trigger" data-target="ficha"><i class="material-icons left">assignment</i>Ficha</a>
 						</li>
 						<li>
 							<a class="waves-effect waves-light btn dropdown-trigger" data-target="documentos"><i class="material-icons left">snippet_folder</i>Documentos</a>
@@ -158,7 +158,7 @@
 								<h1 class="texto-vertical"><?php echo get_the_title(); ?></h1>
 								<!-- Iframe H5P :
 								================================================================================ -->
-								<?php echo do_shortcode( '[h5p id="'. get_field('id') .'"]' ); ?>
+								<?php echo do_shortcode( '[h5p id="' . get_field('id') . '"]' ); ?>
 							</div>
 						</div>
 					</div>

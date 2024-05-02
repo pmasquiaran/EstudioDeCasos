@@ -71,6 +71,7 @@ section > div > iframe {
 .btn-large,
 .btn-small {
 	border-radius: .6rem;
+	letter-spacing: inherit;
 }
 .btn,
 .btn-large,
@@ -88,6 +89,9 @@ section > div > iframe {
 .btn-small:focus,
 .btn-floating:focus {
 	background-color: var(--color-accent);
+}
+i.left {
+	margin-right: 8px;
 }
 .dropdown-content li {
 	min-height: 40px !important;

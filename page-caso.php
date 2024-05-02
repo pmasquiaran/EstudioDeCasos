@@ -37,7 +37,7 @@
 					<ul class="right">
 						<li><a class="waves-effect waves-light btn-floating" href="<?php echo get_permalink( wp_get_post_parent_id() ); ?>"><i class="material-icons">home_filled</i></a></li>
 						<?php $preguntas_pages = get_pages( array( 'child_of' => get_the_ID(), 'parent' => get_the_ID(), 'sort_column' => 'menu_order' ) ); ?>
-						<li><a class="waves-effect waves-light btn" href="<?php echo get_permalink( $preguntas_pages[0]->ID ); ?>">Ir a las preguntas<i class="material-icons right">arrow_forward_ios</i></a></li>
+						<li><a class="waves-effect waves-light btn" href="<?php echo get_permalink( $preguntas_pages[0]->ID ); ?>">Preguntas<i class="material-icons right">arrow_forward_ios</i></a></li>
 					</ul>
 				</nav>
 				<div class="row">
