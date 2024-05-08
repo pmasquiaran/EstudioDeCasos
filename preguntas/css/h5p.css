@@ -24,7 +24,7 @@
 	========================================================================== */
 
 .h5p-iframe > body {
-	align-items: center;
+	/*align-items: center;*/
 	display: flex;
 	font-family: 'Montserrat', sans-serif !important;
 }

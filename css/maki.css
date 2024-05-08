@@ -109,6 +109,22 @@ i.left {
 .container {
 	max-width: 960px;
 }
+.card .card-content ol {
+	margin: 15px 0;
+	padding: 0 0 0 30px;
+}
+.card .card-content ul {
+	list-style-type: disc;
+	margin: 15px 0;
+	padding: 0 0 0 30px;
+}
+.card .card-content ol li {
+	padding-bottom: 8px;
+}
+.card .card-content ul li {
+	list-style-type: disc;
+	padding-bottom: 8px;
+}
 
 
 /*

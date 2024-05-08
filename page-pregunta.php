@@ -111,8 +111,9 @@
 						<li>
 							<a class="waves-effect waves-light btn sidenav-trigger" data-target="ficha"><i class="material-icons left">assignment</i>Ficha</a>
 						</li>
+						<?php if( count( $caso_fields['documentos'] ) > 0 ): ?>
 						<li>
-							<a class="waves-effect waves-light btn dropdown-trigger" data-target="documentos"><i class="material-icons left">snippet_folder</i>Documentos</a>
+							<a class="waves-effect waves-light btn dropdown-trigger" data-target="documentos"><i class="material-icons left">snippet_folder</i>Documentación</a>
 							<ul id="documentos" class="dropdown-content">
 								<?php foreach( $caso_fields['documentos'] as $indice => $documento ): ?>
 								<li>
@@ -124,6 +125,7 @@
 												case 'EXCEL': echo '<i class="material-icons left">table_view</i>'; break;
 												case 'WORD': echo '<i class="material-icons left">text_snippet</i>'; break;
 												case 'POWER POINT': echo '<i class="material-icons left">perm_media</i>'; break;
+												case 'ENLACE WEB': echo '<i class="material-icons left">perm_media</i>'; break;
 											endswitch;
 
 										?>
@@ -133,6 +135,7 @@
 								<?php endforeach; ?>
 							</ul>
 						</li>
+						<?php endif; ?>
 					</ul>
 				</nav>
 				<div class="row">
